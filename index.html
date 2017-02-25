@@ -154,10 +154,13 @@ function getOutput (cmd) {
     case 'GoTo':
       output += directory.replace('~','https://www.facebook.com/events/381754798871697/');
     break;
-    case "<br>":
+    case '<br>':
       output += "";
     break;
     case '':
+      output += "";
+    break;
+    case '\n':
       output += "";
     break;
 		case 'whoami':
