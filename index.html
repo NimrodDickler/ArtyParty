@@ -106,7 +106,7 @@ function updatePrompt () {
 	document.getElementById('prompt').innerHTML = prompt;
 }
 function initStuff () {
-	document.title = 'JSash ~ '+username+'@'+hostname;
+	document.title = 'Techno Pagan Temple ~ '+username+'@'+hostname;
 	prompt = username+'@'+hostname+':'+directory+'$ ';
 	document.getElementById('cmdIn').innerHTML = promptHTML;
 	document.getElementById('prompt').innerHTML = prompt;
@@ -130,7 +130,9 @@ function getOutput (cmd) {
 			output += " cd [DIRECTORY] - Change directory\n";
 			output += " cat [FILE...]&nbsp;&nbsp;- Concatenate FILE(s) to standard output\n";
 			output += " file&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Determine type of FILEs";
-
+      output += " 'where'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Techno Panag Temple";
+      output += " 'date'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Techno Panag Temple";
+      output += " 'when'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Techno Panag Temple";
 			break;
 		case 'clear':
 			document.getElementById('cmdIn').innerHTML = promptHTML;
@@ -139,7 +141,15 @@ function getOutput (cmd) {
 		case 'pwd':
 			output += directory.replace('~','/home/'+username);
 			break;
-
+    case 'where':
+      output += directory.replace('~','Beit Alliance JLM');
+      break;
+    case 'when':
+      output += directory.replace('~','Thursday, March 9 at 11 PM - 8 AM');
+    break;
+    case 'date':
+      output += directory.replace('~','09:03:2017');
+    break;
 		case 'whoami':
 			output += username;
 			break;
