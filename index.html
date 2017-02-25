@@ -129,20 +129,19 @@ function getOutput (cmd) {
 			output += " ls [DIRECTORY] - List file\n";
 			output += " cd [DIRECTORY] - Change directory\n";
 			output += " cat [FILE...]&nbsp;&nbsp;- Concatenate FILE(s) to standard output\n";
-			output += " file&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Determine type of FILEs";
-      output += " where&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Techno Panag Temple";
-      output += " date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Techno Panag Temple";
-      output += " when&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Techno Panag Temple";
-      output += " GoTo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Techno Panag Temple";
+			output += " file&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Determine type of FILEs\n";
+      output += " where&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Techno Panag Temple\n";
+      output += " date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Techno Panag Temple\n";
+      output += " when&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Techno Panag Temple\n";
+      output += " GoTo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Techno Panag Temple\n";
       break;
 		case 'clear':
 			document.getElementById('cmdIn').innerHTML = promptHTML;
 			break;
-
+ //New commands added by me
 		case 'pwd':
 			output += directory.replace('~','/home/'+username);
 			break;
-
     case 'where':
       output += directory.replace('~','Beit Alliance JLM');
       break;
@@ -155,9 +154,8 @@ function getOutput (cmd) {
     case 'GoTo':
       output += directory.replace('~','https://www.facebook.com/events/381754798871697/');
     break;
-
     case '':
-      document.getElementById('cmdIn').innerHTML = promptHTML;
+      //document.getElementById('cmdIn').innerHTML = promptHTML;
     break;
 		case 'whoami':
 			output += username;
