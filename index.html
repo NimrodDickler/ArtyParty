@@ -1,54 +1,54 @@
 <!--
     JSash, a javascript "shell-style" website
     Copyright (C) 2013 Flavio 'darkjoker' Giobergia
- 
+
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
- 
+
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
- 
+
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <html>
 <head>
-<title>APJ</title>
+  <title>Arty Party - Techno Pagan Temple</title>
 </head>
 <body onLoad = 'initStuff();'>
 <style>
-.shell {
-	width: 100%;
-	height: 100%;
-	top: 0px;
-	left: 0px;
-	background: #000000;
-	font-size: 11px;
-	font-family: Courier;
-	color: #00cc00;
-}
-.input {
-	background: #000000;
-	border: 0px;
-	font-size: 11px;
-	font-family: Courier;
-	color: #00cc00;
-	outline: none;
-	width: 600px;
-	left: auto;
-	right: 10px;
-}
+  .shell {
+  	width: 100%;
+  	height: 100%;
+  	top: 0px;
+  	left: 0px;
+  	background: #000000;
+  	font-size: 11px;
+  	font-family: Courier;
+  	color: #00cc00;
+  }
+  .input {
+  	background: #000000;
+  	border: 0px;
+  	font-size: 11px;
+  	font-family: Courier;
+  	color: #00cc00;
+  	outline: none;
+  	width: 600px;
+  	left: auto;
+  	right: 10px;
+  }
 </style>
 <div class = 'shell'>
-<div id = 'cmdIn'></div>
+  <div id = 'cmdIn'></div>
 </div>
 <script>
-var username = 'Party';
-var hostname = 'arty';
+var username = 'Arty';
+var hostname = 'Party';
 var directory = '~';
 var prompt;
 var history = Array ();
@@ -98,12 +98,12 @@ function parsePath (path) {
 			path=file;
 		}
 	}
-	
+
 	return path.replace('/home/'+username,'~');
 }
 function updatePrompt () {
 	prompt = username+'@'+hostname+':'+directory+'$ ';
-	document.getElementById('prompt').innerHTML = prompt;	
+	document.getElementById('prompt').innerHTML = prompt;
 }
 function initStuff () {
 	document.title = 'JSash ~ '+username+'@'+hostname;
@@ -120,7 +120,7 @@ function getOutput (cmd) {
 		case 'help':
 			output += "JSash help command:\n";
 			output += "By Flavio 'darkjoker' Giobergia\n\n";
-			// &nbsp; FTW :D 
+			// &nbsp; FTW :D
 			output += " help&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Display this message\n";
 			output += " clear&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Clear screen\n";
 			output += " pwd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Display current directory\n";
@@ -130,24 +130,24 @@ function getOutput (cmd) {
 			output += " cd [DIRECTORY] - Change directory\n";
 			output += " cat [FILE...]&nbsp;&nbsp;- Concatenate FILE(s) to standard output\n";
 			output += " file&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Determine type of FILEs";
-			
+
 			break;
 		case 'clear':
 			document.getElementById('cmdIn').innerHTML = promptHTML;
 			break;
-			
+
 		case 'pwd':
 			output += directory.replace('~','/home/'+username);
 			break;
-			
+
 		case 'whoami':
 			output += username;
 			break;
-		
+
 		case 'hostname':
 			output += hostname;
 			break;
-			
+
 		case 'ls':
 			/* Ignores other parameters */
 			for (i=1;i<argc;i++) {
@@ -200,7 +200,7 @@ function getOutput (cmd) {
 				output += 'ls: cannot access '+dir+': No such file or directory';
 			}
 			break;
-		
+
 		case 'cd':
 			/* Ignores other parameters */
 			for (i=1;i<argc;i++) {
@@ -220,10 +220,10 @@ function getOutput (cmd) {
 					dir = argv[i];
 				}
 			}
-			
+
 			dir = parsePath(dir);
 			re = new RegExp (' '+dir.substring(0,(!dir.lastIndexOf('/'))?1:dir.lastIndexOf('/')));
-			
+
 			if (avDirs.indexOf (dir)!=-1) {
 				directory = dir;
 			}
@@ -237,7 +237,7 @@ function getOutput (cmd) {
 				output += 'cd: '+dir+': No such file or directory';
 			}
 			break;
-			
+
 		case 'cat':
 			/* Ignores other parameters */
 			for (i=1;i<argc;i++) {
@@ -250,7 +250,7 @@ function getOutput (cmd) {
 					}
 					file = parsePath(file);
 					re = new RegExp (' '+file.substring(0,(!file.lastIndexOf('/'))?1:file.lastIndexOf('/')));
-					
+
 					if (filesList[file]) {
 						output += filesList[file];
 					}
@@ -271,7 +271,7 @@ function getOutput (cmd) {
 			}
 			output = output.substring (0,output.length-1);
 			break;
-		
+
 		case 'file':
 			/* Ignores other parameters */
 			for (i=1;i<argc;i++) {
@@ -299,9 +299,9 @@ function getOutput (cmd) {
 				output += 'Usage: file [FILE...]\n';
 			}
 			output = output.substring (0,output.length-1);
-			break;			
+			break;
 		default:
-		
+
 			output += argv[0]+': command not found';
 			break;
 	}
