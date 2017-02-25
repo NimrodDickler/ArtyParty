@@ -130,10 +130,11 @@ function getOutput (cmd) {
 			output += " cd [DIRECTORY] - Change directory\n";
 			output += " cat [FILE...]&nbsp;&nbsp;- Concatenate FILE(s) to standard output\n";
 			output += " file&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Determine type of FILEs";
-      output += " 'where'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Techno Panag Temple";
-      output += " 'date'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Techno Panag Temple";
-      output += " 'when'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Techno Panag Temple";
-			break;
+      output += " where&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Techno Panag Temple";
+      output += " date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Techno Panag Temple";
+      output += " when&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Techno Panag Temple";
+      output += " GoTo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Techno Panag Temple";
+      break;
 		case 'clear':
 			document.getElementById('cmdIn').innerHTML = promptHTML;
 			break;
@@ -141,6 +142,7 @@ function getOutput (cmd) {
 		case 'pwd':
 			output += directory.replace('~','/home/'+username);
 			break;
+
     case 'where':
       output += directory.replace('~','Beit Alliance JLM');
       break;
@@ -149,6 +151,13 @@ function getOutput (cmd) {
     break;
     case 'date':
       output += directory.replace('~','09:03:2017');
+    break;
+    case 'GoTo':
+      output += directory.replace('~','https://www.facebook.com/events/381754798871697/');
+    break;
+
+    case '':
+      document.getElementById('cmdIn').innerHTML = promptHTML;
     break;
 		case 'whoami':
 			output += username;
