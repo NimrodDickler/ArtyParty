@@ -157,6 +157,9 @@ function getOutput (cmd) {
     case '':
       output += "\n";
     break;
+    case "\n":
+      output += "\n";
+    break;
 		case 'whoami':
 			output += username;
 			break;
