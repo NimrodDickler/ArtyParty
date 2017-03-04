@@ -386,9 +386,11 @@ function getCmd (e) {
 	code = e.keyCode ? e.keyCode : e.charCode;
 	switch (code) {
 		case 13: // Enter
-			cmdtemp = htmlEntities (document.getElementById('cmd').value); // XSS
-      var cmd = Array.prototype.slice.call(cmdtemp);
-			history.unshift (cmd);
+			//var cmdtemp = htmlEntities (document.getElementById('cmd').value); // XSS debig
+      //var cmdtest = Array.prototype.slice.call(cmdtemp);
+      //history.unshift (cmdtest);
+      cmd = htmlEntities (document.getElementById('cmd').value); // XSS
+      history.unshift (cmd);
 			out = getOutput (cmd);
 			printPrompt (cmd,out);
 			histPos=-1;
