@@ -382,7 +382,7 @@ function printPrompt (cmd, output) {
 	document.getElementById('cmd').focus(); // "workaround" for firefox (and probably summin' else)
 }
 function getCmd (e) {
-  define('SCRIPT_DEBUG', true);
+  //define('SCRIPT_DEBUG', true);
 	code = e.keyCode ? e.keyCode : e.charCode;
 	switch (code) {
 		case 13: // Enter
