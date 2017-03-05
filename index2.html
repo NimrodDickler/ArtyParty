@@ -1,17 +1,14 @@
 <!--
     JSash, a javascript "shell-style" website
     Copyright (C) 2013 Flavio 'darkjoker' Giobergia
-
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
-
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
-
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
@@ -98,7 +95,6 @@ function parsePath (path) {
 			path=file;
 		}
 	}
-
 	return path.replace('/home/'+username,'~');
 }
 function updatePrompt () {
@@ -106,11 +102,20 @@ function updatePrompt () {
 	document.getElementById('prompt').innerHTML = prompt;
 }
 function initStuff () {
-    document.title = 'Techno Pagan Temple ~ '+username+'@'+hostname;
-  	prompt = username+'@'+hostname+':'+directory+'$ ';
-  	document.getElementById('cmdIn').innerHTML = promptHTML;
-  	document.getElementById('prompt').innerHTML = prompt;
-  	document.getElementById('cmd').focus(); // "workaround" for firefox (and probably summin' else)
+	document.title = 'Techno Pagan Temple ~ '+username+'@'+hostname;
+  output = '';
+  output += "Greeting pagan disciples\n";
+  output += "Welcome to APJ PAGAN Temple\n";
+  output += "The gods are happy with your presence.\n";
+  output += "\n";
+  output += "\n";
+  output += "\n";
+  output += "Please type 'fuckmepagan' to send your token:\n";
+  prompt += username+'@'+hostname+':'+directory+'$ ';
+	document.getElementById('cmdIn').innerHTML = promptHTML;
+  document.getElementById('prompt').innerHTML = output;
+	document.getElementById('prompt').innerHTML = prompt;
+	document.getElementById('cmd').focus(); // "workaround" for firefox (and probably summin' else)
 }
 function getOutput (cmd) {
 	argv = cmd.split(" ");
@@ -135,41 +140,40 @@ function getOutput (cmd) {
       output += " when&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Techno Panag Temple\n";
       output += " GoTo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Techno Panag Temple\n";
       break;
-
   case 'mandrill':
-	     output += " ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ──\n";
-	     output += " ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ──\n";
-       output += " ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ──\n";
-	     output += " ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ──\n";
-	     output += " ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ──\n";
-	     output += " ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ──\n";
-	     output += " ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ──\n";
-	     output += " ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ──\n";
-	     output += " ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ──\n";
-	     output += " ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ──\n";
-	     output += " ── ── ── ── ── ── ── ── ── ██ ── ── ── ── ── ── ── ──\n";
-	     output += " ── ── ── ── ── ── ── ── ██ ── ██ ── ── ── ── ── ── ──\n";
-	     output += " ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ──\n";
-	     output += " ── ── ── ── ── █▌ ── ── ── ▌▐ ── ── ── ▐█ ── ── ── ──\n";
-	     output += " ── ── ── ── ── ██ ▐█ ── ▐█ ▌▐ ▐█ ── ▐█ ██ ── ── ── ──\n";
-	     output += " ── ── █▌ ── ── ██ ▐█ ── ▐█ ▌▐ ▐█ ── ▐█ ██ ── ── █▌ ──\n";
-	     output += " ── ── █▌ █▌ ── ── ── ▐█ ── ── ── ▐█ ── ── ── █▌ █▌ ──\n";
-	     output += " ── ── █▌ ██ ── ▐█ ▐█ ▐█ ▐█ ── ▐█ ▐█ ▐█ ▐█ ── █▌ █▌ ──\n";
-	     output += " ── ── ── ── ▐█ ▐█ ── ── ▐█ ▐█ ▐█ ── ── ▐█ ▐█ ── ── ──\n";
-	     output += " ── ── ── ── ██ ── ▒▒ ▒▒ ── ▐█ ── ▒▒ ▒▒ ── ██ ── ── ──\n";
-	     output += " ── ── ── ── ── ── ── ── ── ║║ ── ── ── ── ── ── ── ──\n";
-	     output += " ── ── ── ── ▀▄ ▀▄ ▀▄ ▀▄ ── ║║ ── ▄▀ ▄▀ ▄▀ ▄▀ ── ── ──\n";
-	     output += " ── ── ── ── ── ▀▄ ▀▄ ▀▄ ▀▄ ║║ ▄▀ ▄▀ ▄▀ ▄▀ ── ── ── ──\n";
-	     output += " ── ── ── ── ── ── ▀▄ ▀▄ ▀▀ ▀▀ ▀▀ ▄▀ ▄▀ ── ── ── ── ──\n";
-	     output += " ── ── ── ── ── ── ── ▀▄ ██ ── ██ ▄▀ ── ── ── ── ── ──\n";
-	     output += " ── ── ── ── ── ▐█ ── ── ▄▄ ▄▄ ▄▄ ── ── ▐█ ── ── ── ──\n";
-	     output += " ── ── ── ── ── ▐█ ▐█ ── ── ── ── ── ▐█ ▐█ ── ── ── ──\n";
-	     output += " ── ── ── ── ── ▐█ ▐█ ▐█ ▐█ ▐█ ▐█ ▐█ ▐█ ▐█ ── ── ── ──\n";
-	     output += " ── ── ── ── ── ── ▐█ ▐█ ▐█ ▐█ ▐█ ▐█ ▐█ ── ── ── ── ──\n";
-	     output += " ── ── ── ── ── ── ▐█ ▐█ ▐█ ▐█ ▐█ ▐█ ▐█ ── ── ── ── ──\n";
-	     output += " ── ── ── ── ── ── ── ── ▐█ ▐█ ▐█ ── ── ── ── ── ── ──\n";
-	     output += " ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ──\n";
-       output += " ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ──\n";
+	     output += " -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --\n";
+	     output += " -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --\n";
+       output += " -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --\n";
+	     output += " -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --\n";
+	     output += " -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --\n";
+	     output += " -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --\n";
+	     output += " -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --\n";
+	     output += " -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --\n";
+	     output += " -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --\n";
+	     output += " -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --\n";
+	     output += " -- -- -- -- -- -- -- -- -- �� -- -- -- -- -- -- -- --\n";
+	     output += " -- -- -- -- -- -- -- -- �� -- �� -- -- -- -- -- -- --\n";
+	     output += " -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --\n";
+	     output += " -- -- -- -- -- �� -- -- -- �� -- -- -- �� -- -- -- --\n";
+	     output += " -- -- -- -- -- �� �� -- �� �� �� -- �� �� -- -- -- --\n";
+	     output += " -- -- �� -- -- �� �� -- �� �� �� -- �� �� -- -- �� --\n";
+	     output += " -- -- �� �� -- -- -- �� -- -- -- �� -- -- -- �� �� --\n";
+	     output += " -- -- �� �� -- �� �� �� �� -- �� �� �� �� -- �� �� --\n";
+	     output += " -- -- -- -- �� �� -- -- �� �� �� -- -- �� �� -- -- --\n";
+	     output += " -- -- -- -- �� -- �� �� -- �� -- �� �� -- �� -- -- --\n";
+	     output += " -- -- -- -- -- -- -- -- -- �� -- -- -- -- -- -- -- --\n";
+	     output += " -- -- -- -- �_ �_ �_ �_ -- �� -- _� _� _� _� -- -- --\n";
+	     output += " -- -- -- -- -- �_ �_ �_ �_ �� _� _� _� _� -- -- -- --\n";
+	     output += " -- -- -- -- -- -- �_ �_ �� �� �� _� _� -- -- -- -- --\n";
+	     output += " -- -- -- -- -- -- -- �_ �� -- �� _� -- -- -- -- -- --\n";
+	     output += " -- -- -- -- -- �� -- -- __ __ __ -- -- �� -- -- -- --\n";
+	     output += " -- -- -- -- -- �� �� -- -- -- -- -- �� �� -- -- -- --\n";
+	     output += " -- -- -- -- -- �� �� �� �� �� �� �� �� �� -- -- -- --\n";
+	     output += " -- -- -- -- -- -- �� �� �� �� �� �� �� -- -- -- -- --\n";
+	     output += " -- -- -- -- -- -- �� �� �� �� �� �� �� -- -- -- -- --\n";
+	     output += " -- -- -- -- -- -- -- -- �� �� �� -- -- -- -- -- -- --\n";
+	     output += " -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --\n";
+       output += " -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --\n";
       break;
 		case 'clear':
 			document.getElementById('cmdIn').innerHTML = promptHTML;
@@ -202,11 +206,9 @@ function getOutput (cmd) {
 		case 'whoami':
 			output += username;
 			break;
-
 		case 'hostname':
 			output += hostname;
 			break;
-
 		case 'ls':
 			/* Ignores other parameters */
 			for (i=1;i<argc;i++) {
@@ -259,7 +261,6 @@ function getOutput (cmd) {
 				output += 'ls: cannot access '+dir+': No such file or directory';
 			}
 			break;
-
 		case 'cd':
 			/* Ignores other parameters */
 			for (i=1;i<argc;i++) {
@@ -279,10 +280,8 @@ function getOutput (cmd) {
 					dir = argv[i];
 				}
 			}
-
 			dir = parsePath(dir);
 			re = new RegExp (' '+dir.substring(0,(!dir.lastIndexOf('/'))?1:dir.lastIndexOf('/')));
-
 			if (avDirs.indexOf (dir)!=-1) {
 				directory = dir;
 			}
@@ -296,7 +295,6 @@ function getOutput (cmd) {
 				output += 'cd: '+dir+': No such file or directory';
 			}
 			break;
-
 		case 'cat':
 			/* Ignores other parameters */
 			for (i=1;i<argc;i++) {
@@ -309,7 +307,6 @@ function getOutput (cmd) {
 					}
 					file = parsePath(file);
 					re = new RegExp (' '+file.substring(0,(!file.lastIndexOf('/'))?1:file.lastIndexOf('/')));
-
 					if (filesList[file]) {
 						output += filesList[file];
 					}
@@ -330,7 +327,6 @@ function getOutput (cmd) {
 			}
 			output = output.substring (0,output.length-1);
 			break;
-
 		case 'file':
 			/* Ignores other parameters */
 			for (i=1;i<argc;i++) {
@@ -360,7 +356,6 @@ function getOutput (cmd) {
 			output = output.substring (0,output.length-1);
 			break;
 		default:
-
 			output += argv[0]+': command not found';
 			break;
 	}
