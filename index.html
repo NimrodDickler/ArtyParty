@@ -108,7 +108,8 @@ function updatePrompt () {
 function initStuff () {
 	document.title = 'Techno Pagan Temple ~ '+username+'@'+hostname;
   prompt = '';
-  prompt += "hello\n";
+  prompt += "hello";
+  prompt += "\n";
   prompt += username+'@'+hostname+':'+directory+'$ ';
 	document.getElementById('cmdIn').innerHTML = promptHTML;
 	document.getElementById('prompt').innerHTML = prompt;
