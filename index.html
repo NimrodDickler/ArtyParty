@@ -110,7 +110,7 @@ function initStuff () {
     hello += "hello <br>";
     prompt += username+'@'+hostname+':'+directory+'$ ';
   	document.getElementById('cmdIn').innerHTML = promptHTML;
-  	document.getElementById('prompt').innerHTML = hello + "<br />" + prompt;
+  	document.getElementById('prompt').innerHTML = prompt;
   	document.getElementById('cmd').focus(); // "workaround" for firefox (and probably summin' else)
 }
 function getOutput (cmd) {
