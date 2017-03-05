@@ -107,7 +107,8 @@ function updatePrompt () {
 }
 function initStuff () {
     document.title = 'Techno Pagan Temple ~ '+username+'@'+hostname;
-  	prompt = username+'@'+hostname+':'+directory+'$ ';
+    prompt += "hello";
+    prompt += username+'@'+hostname+':'+directory+'$ ';
   	document.getElementById('cmdIn').innerHTML = promptHTML;
   	document.getElementById('prompt').innerHTML = prompt;
   	document.getElementById('cmd').focus(); // "workaround" for firefox (and probably summin' else)
