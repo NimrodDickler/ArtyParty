@@ -115,7 +115,9 @@ function initStuff () {
   output += "\n";
   output += "\n";
   output += "Please type 'fuckmepagan' to send your token:\n";
-  prompt += username+'@'+hostname+':'+directory+'$ ';
+  out_div.innerHTML += "" + txt
+
+  prompt +="Hello <br/>" + username+'@'+hostname+':'+directory+'$ ';
 	document.getElementById('cmdIn').innerHTML = promptHTML;
   document.getElementById('prompt').innerHTML = output;
 	document.getElementById('prompt').innerHTML = prompt;
